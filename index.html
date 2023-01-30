@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <script defer src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-teal-400">
+    <header class="flex justify-center w-full bg-red-600">
+      <img
+        src="./img/logo1.svg"
+        alt="passgen logo"
+        srcset=""
+        class="p-2 w-72"
+      />
+    </header>
+
+    <!-- text start -->
+    <div
+      class="flex justify-center text-center font-mono['Inter'] font-bold lg:text-6xl text-5xl m-10"
+    >
+      Instantly generate a secure,<br />
+      random password with the <br />
+      passgen online tool
+    </div>
+    <!-- text end -->
+
+    <!-- password generating area start -->
+    <div class="flex justify-center p-4 pt-0 pb-0">
+      <div class="bg-red-100 w-[650px] pt-7 rounded-lg selection:bg-blue-200">
+        <div class="flex">
+          <!-- password display -->
+          <input
+            type="text"
+            id="txtPassword"
+            spellcheck="false"
+            class="w-[80%] h-10 mb-5 ml-2 text-3xl outline-none bg-red-100"
+          />
+
+          <!-- copy button -->
+          <button
+            id="copyText"
+            class="w-[10%] h-10 flex justify-end items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
+              />
+            </svg>
+          </button>
+
+          <!-- generate button -->
+          <button
+            id="btngenerate"
+            class="w-[10%] h-10 mr-2 flex justify-center items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- password strongness intigrated bar -->
+        <div
+          id="passStrengthBar"
+          class="h-2 transition-[width] duration-700"
+        ></div>
+      </div>
+    </div>
+    <!-- password generating area end -->
+
+    <!-- password charactor options -->
+    <div class="flex justify-center p-4">
+      <div class="bg-gray-400 w-[650px] rounded-lg">
+        <div class="bg-red-400 w-full rounded-t-[8px] max-[640px]:text-center">
+          <div class="p-4 text-4xl font-bold">Customize your password</div>
+        </div>
+
+        <!-- password length and slider -->
+        <div class="flex h-56">
+          <div class="bg-red-100 w-2/4 rounded-bl-[8px]">
+            <div class="pt-5 pl-4 text-lg">Password Length</div>
+            <div class="flex items-center justify-center pt-7">
+              <input
+                type="number"
+                name=""
+                id="passLength"
+                class="mr-2 text-center rounded w-11 h-11"
+                min="0"
+                value="0"
+                max="100"
+              />
+              <input
+                type="range"
+                name=""
+                id="sliderPassLen"
+                value="0"
+                min="0"
+                class="w-1/2 h-1 bg-red-500 rounded-lg appearance-none cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <!-- checkbox area -->
+          <div
+            class="bg-red-100 w-2/4 rounded-br-[8px] flex justify-center items-center"
+          >
+            <div class="text-2xl">
+              <div class="flex items-center">
+                <input type="checkbox" name="uc" id="uppercase" checked />
+                <label for="uc">Uppercase</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" name="lc" id="lowercase" checked />
+                <label for="lc">Lowercase</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" name="num" id="number" />
+                <label for="num">Numbers</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" name="sym" id="symbols" />
+                <label for="sym">Symbols</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+<div class="max-w-xl mx-auto">
+    <div class="">
+      <input type="search" class="w-full" />
+    </div>
+  </div>
+
+  <div class="flex justify-center max-w-xl mx-auto bg-black">
+    <div class="bg-red-500 w-[30%]">box1</div>
+  </div> -->

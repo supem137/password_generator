@@ -1,0 +1,37 @@
+#sliderPassLen::-webkit-slider-thumb {
+    width: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    background: rgb(43, 42, 42);
+    border-radius: 50%;
+    
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    background:rgb(179, 179, 179);
+    margin: 6px;
+    border-radius:50%;
+    box-shadow: inset 1em 1em var(--form-control-color);
+
+}
+input[type="checkbox"]:checked{
+    background: #ef4444;
+}
+
+.bar{
+    border-bottom-right-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+}
+
+.bar1{
+   border-bottom-left-radius: 9999px;
+}
+
+
+button{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
